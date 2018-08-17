@@ -15,9 +15,6 @@ After checking out the code, run
 ```sh
 $ cd /path/to/fbinstant-new
 $ yarn install
-...
-$ cp config.template.json config.json # create config file
-```
 
 ## Configuration
 You will need to provide your app's information in `config.json`
