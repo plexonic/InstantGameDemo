@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const htmlReplace = require('gulp-html-replace');
 const webServer = require('gulp-webserver');
-const rename = require("gulp-rename");
 const zip = require('gulp-zip');
 const request = require('request');
 const fs = require('fs');
@@ -12,28 +11,15 @@ const uuid = require('uuid/v1');
 const config = require('./config.json');
 const SDK_PATH = 'https://connect.facebook.net/en_US/fbinstant.6.0.js';
 const BUILD_FOLDER = './build';
-const LIB_FILES = [
-    './node_modules/html2canvas/dist/html2canvas.min.js'
-];
 
 function make() {
     const sourceFiles = [
         'js/**/*',
-        'css/**/*',
-        'img/**/*',
-        '!js/mock/**/*',
-        '!css/mock/**/*',
-        '!assets/mock/**/*'
+        'assets/**/*'
     ];
     const sdkPath = SDK_PATH;
 
     return Promise.all([
-        new Promise((resolve, reject) => {
-            gulp.src(LIB_FILES)
-                .on('error', reject)
-                .pipe(gulp.dest('./js/lib/'))
-                .on('end', resolve)
-        }),
         new Promise((resolve, reject) => {
             gulp.src(sourceFiles, {base: './'})
                 .on('error', reject)
@@ -48,7 +34,7 @@ function make() {
                 }))
                 .pipe(gulp.dest(BUILD_FOLDER))
                 .on('end', resolve)
-        }),
+        })
     ]);
 }
 
@@ -115,8 +101,6 @@ function upload(archivesFolder, filename) {
  * 
  */
 gulp.task('mock', function () {
-    gulp.src(LIB_FILES)
-        .pipe(gulp.dest('./js/lib/'));
     gulp.src('./')
         .pipe(webServer({
             open: true,

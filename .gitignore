@@ -1,5 +1,6 @@
 node_modules/
 build/
+js/
 # User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml
