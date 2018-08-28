@@ -307,11 +307,11 @@ declare type GameConfig = {
     /**
      * [description]
      */
-    width?: integer | string;
+    width?: integer;
     /**
      * [description]
      */
-    height?: integer | string;
+    height?: integer;
     /**
      * [description]
      */
@@ -51554,7 +51554,7 @@ declare namespace Phaser {
              * @param callback [description]
              * @param callbackScope [description]
              */
-            iterate(callback: EachSetCallback<T>, callbackScope: any): Phaser.Structs.Set<T>;
+            iterate(callback: EachSetCallback<T>, callbackScope?: any): Phaser.Structs.Set<T>;
 
             /**
              * [description]

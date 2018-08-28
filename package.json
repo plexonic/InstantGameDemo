@@ -2,6 +2,12 @@
   "name": "phaser-1",
   "version": "0.0.0",
   "private": true,
+  "homepage": "https://github.com/plexonic/InstantGameDemo#readme",
+  "main": "js/bundle.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plexonic/InstantGameDemo.git"
+  },
   "scripts": {
     "build:prod": "webpack --env prod",
     "build:dev": "webpack --env dev",

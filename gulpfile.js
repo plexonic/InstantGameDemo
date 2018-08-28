@@ -9,7 +9,7 @@ const path = require('path');
 const uuid = require('uuid/v1');
 
 const config = require('./config.json');
-const SDK_PATH = 'https://connect.facebook.net/en_US/fbinstant.6.0.js';
+const SDK_PATH = 'https://connect.facebook.net/en_US/fbinstant.6.2.js';
 const BUILD_FOLDER = './build';
 
 function make() {
